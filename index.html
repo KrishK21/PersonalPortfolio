@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krish Kanda — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,450;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="ambient" aria-hidden="true"></canvas>
+<div id="scrollrail" aria-hidden="true"><div id="scrollheat"></div><span id="scrolltemp">36.6°</span></div>
+
+<div id="boot" aria-hidden="true"><pre id="bootlog"></pre></div>
+
+<header class="hero" id="top">
+  <canvas id="thermal" aria-hidden="true"></canvas>
+  <div class="hero-frame" aria-hidden="true"></div>
+  <div id="det" aria-hidden="true"><span class="lbl" id="detlbl">SIGNAL LOCKED · 36.6°C</span></div>
+  <div class="hero-meta" aria-hidden="true">
+    <span>KANDA / K-21</span>
+    <span id="clock">THERMAL FEED <span class="live">● LIVE</span></span>
+    <span>VANCOUVER, WA · 45.63°N</span>
+  </div>
+  <div class="hero-content">
+    <h1>Krish<br>Kanda</h1>
+    <p class="hero-sub"><strong>ML models that find people.</strong> Cloud platforms that keep systems honest.</p>
+    <div class="hero-links">
+      <a href="https://github.com/KrishK21">GitHub</a>
+      <a href="http://linkedin.com/in/krish-kanda">LinkedIn</a>
+      <a href="mailto:Krishkanda99@gmail.com">Krishkanda99@gmail.com</a>
+      <a href="tel:+13608468949">(360) 846-8949</a>
+    </div>
+  </div>
+  <span class="hint" id="hint">move your cursor — you're the heat source · click to flare</span>
+</header>
+
+<nav id="quicknav" aria-label="Section navigation">
+  <a href="#top" class="qn-mark">K·21</a>
+  <div class="qn-links">
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#hackathon">Hackathon</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+    <a href="#contact" class="qn-contact">Contact</a>
+  </div>
+</nav>
+
+<div class="ticker" aria-label="Career metrics">
+  <div class="ticker-track" id="tickertrack">
+    <div class="ticker-set">
+      <span class="tk">latency cut <b class="up">-45%</b> drone telemetry</span>
+      <span class="tk">trade violations saved <b class="up">$70K</b> /yr</span>
+      <span class="tk">ETL manual work <b class="up">-60%</b> via ADF</span>
+      <span class="tk">release cycles <b>days → hours</b> CI/CD</span>
+      <span class="tk">ghost job listings <b class="up">0</b> LinkedOut</span>
+      <span class="tk">GPA <b>3.8</b> honors</span>
+      <span class="tk">hackathon <b class="up">1st</b> place</span>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="sec-head">
+      <h2 id="exp-h">Experience</h2>
+      <span class="readout">signal history · <b>2 sources</b></span>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="job-top">
+          <h3>Software Applications Developer Intern</h3>
+          <span class="org">Fisher Investments — Camas, WA</span>
+          <span class="when">JUN–AUG 2026</span>
+        </div>
+        <p class="role-line">Built and led integration of <em>Azure</em> pipelines moving data from on-prem SQL Server into Blob Storage and Cosmos DB, running ADF transforms and SQL comparisons to reconcile records — the unified platform that onboarded a new European custodian. Wired CI/CD on <em>Octopus Deploy</em> and Splunk monitoring on top.</p>
+        <div class="job-stack">
+          <span class="key">Azure</span><span class="key">C#</span><span>SQL Server</span><span>Cosmos DB</span><span>Blob Storage</span><span>ADF</span><span>Octopus Deploy</span><span>Splunk</span>
+        </div>
+        <div class="viz" aria-hidden="true">
+          <span class="viz-tag">pipeline topology — live flow</span>
+          <svg class="flow" viewBox="0 0 660 170" xmlns="http://www.w3.org/2000/svg">
+            <rect class="node" x="14" y="26" width="104" height="24"/><text x="24" y="42">SQL SERVER</text>
+            <rect class="node" x="14" y="60" width="104" height="24"/><text x="24" y="76">BLOB STORAGE</text>
+            <rect class="node" x="14" y="94" width="104" height="24"/><text x="24" y="110">COSMOS DB</text>
+            <rect class="node" x="14" y="128" width="104" height="24"/><text x="24" y="144">REST APIS</text>
+            <path class="wire" d="M118 38 C 190 38, 200 85, 268 85"/>
+            <path class="wire" d="M118 72 C 180 72, 200 85, 268 85"/>
+            <path class="wire" d="M118 106 C 180 106, 200 85, 268 85"/>
+            <path class="wire" d="M118 140 C 190 140, 200 85, 268 85"/>
+            <path class="pulse"    d="M118 38 C 190 38, 200 85, 268 85"/>
+            <path class="pulse p2" d="M118 72 C 180 72, 200 85, 268 85"/>
+            <path class="pulse p3" d="M118 106 C 180 106, 200 85, 268 85"/>
+            <path class="pulse p4" d="M118 140 C 190 140, 200 85, 268 85"/>
+            <rect class="node corenode" x="268" y="66" width="140" height="38"/>
+            <text class="hotlbl" x="285" y="89">AZURE PLATFORM</text>
+            <path class="wire" d="M408 85 L 512 85"/>
+            <path class="pulse pout" d="M408 85 L 512 85"/>
+            <rect class="node" x="512" y="66" width="134" height="38"/>
+            <text x="524" y="83">EU CUSTODIAN</text>
+            <text x="524" y="97">ONBOARDED ✓</text>
+          </svg>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-top">
+          <h3>Software Developer Intern</h3>
+          <span class="org">Interject Cloud System — Vancouver, WA</span>
+          <span class="when">APR–JUL 2024</span>
+        </div>
+        <p class="role-line">Streamed thermal imagery from drones into <em>SQL Server</em> over async I/O, then trained <em>PyTorch</em> CNNs on that data to detect people in the heat signatures for search-and-rescue — with NumPy feature extraction and precision/recall evaluation on the model.</p>
+        <div class="job-stack">
+          <span class="key">PyTorch</span><span class="key">Python</span><span>NumPy</span><span>CNN</span><span>SQL Server</span><span>async I/O</span><span>Copilot</span><span>Claude Code</span>
+        </div>
+        <div class="viz" aria-hidden="true">
+          <span class="viz-tag">drone sweep — thermal detection replay</span>
+          <span class="viz-stat" id="latstat">LATENCY <b>—</b></span>
+          <canvas class="droneviz-c" id="droneviz"></canvas>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <div class="sec-head">
+      <h2 id="proj-h">Projects</h2>
+      <span class="readout">built &amp; shipped · <b>self-directed</b></span>
+    </div>
+
+    <article class="project">
+      <div class="p-main">
+        <h3>AI Resume Tailor</h3>
+        <p>Reads a job description, rewrites your resume to match — truthfully. Claude API · React · FastAPI.</p>
+        <div class="demo" aria-hidden="true">
+          <div class="demo-bar"><span class="dot on"></span><span class="dot"></span><span>rewrite.py — live</span></div>
+          <div class="in-line" id="demo-in"></div>
+          <div class="out-line"><span id="demo-out"></span><span class="caret" id="demo-caret"></span></div>
+          <div class="match">
+            <div class="m-lbl"><span>job-description match</span><b id="matchpct">0%</b></div>
+            <div class="m-track"><div class="m-fill" id="matchbar"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="p-side">
+        <div class="p-label">STACK READOUT</div>
+        <ul>
+          <li>React</li>
+          <li>FastAPI · Python</li>
+          <li>Anthropic Claude API</li>
+          <li>LLM prompt engineering</li>
+        </ul>
+        <div class="p-date">APR–JUL 2026</div>
+      </div>
+    </article>
+
+    <article class="project flip">
+      <div class="p-main">
+        <h3>LinkedOut</h3>
+        <p>A job board that hunts ghost listings to extinction. Flask · SQLite · REST.</p>
+        <div class="viz ghostviz" aria-hidden="true">
+          <div class="gv-head">expiration_filter.py — <b>running</b></div>
+          <ul id="gvlist"></ul>
+          <div class="gv-count">ghost listings purged this visit: <b id="gvn">0</b></div>
+        </div>
+      </div>
+      <div class="p-side">
+        <div class="p-label">STACK READOUT</div>
+        <ul>
+          <li>Python · Flask</li>
+          <li>SQLite</li>
+          <li>REST API design</li>
+        </ul>
+        <div class="p-date">JAN–MAY 2026</div>
+      </div>
+    </article>
+  </section>
+
+  <section id="hackathon" aria-labelledby="hack-h">
+    <div class="sec-head">
+      <h2 id="hack-h">Hackathon win</h2>
+      <span class="readout">huskyhack · <b>1st place</b></span>
+    </div>
+    <div class="trophy">
+      <div>
+        <span class="t-badge"><span class="pip"></span>WINNER · HUSKYHACK PHASE 1</span>
+        <h3>WealthPilot</h3>
+        <p class="t-sub">An AI financial copilot that turns bank perks into progress toward your goals — with ML-driven suggestions, streaks, and community.</p>
+        <p class="t-meta">Built with Jason Pham · Next.js · React · Gemini · Plaid / Amex / Chase APIs</p>
+        <div class="t-links">
+          <a href="https://devpost.com/software/futurefinance">View on Devpost</a>
+          <a href="https://sans-baggy-16082428.figma.site">Live demo</a>
+        </div>
+      </div>
+      <div class="board" aria-hidden="true">
+        <div class="b-head">monthly leaderboard — live</div>
+        <div class="board-row you" style="--w:100%"><span class="rk">1</span><span class="nm">You</span><span class="bar"><i></i></span><span class="pt">2,410</span></div>
+        <div class="board-row" style="--w:78%"><span class="rk">2</span><span class="nm">A. Rivera</span><span class="bar"><i></i></span><span class="pt">1,880</span></div>
+        <div class="board-row" style="--w:61%"><span class="rk">3</span><span class="nm">M. Chen</span><span class="bar"><i></i></span><span class="pt">1,470</span></div>
+        <div class="board-row" style="--w:44%"><span class="rk">4</span><span class="nm">S. Patel</span><span class="bar"><i></i></span><span class="pt">1,060</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signals" aria-labelledby="sig-h">
+    <div class="sec-head">
+      <h2 id="sig-h">Beyond the job</h2>
+      <span class="readout">heat signatures · <b>2 detected</b></span>
+    </div>
+    <div class="signals">
+      <div class="signal" style="--fill:96.2%">
+        <span class="sig-temp">96.2° — BURNING</span>
+        <div class="sig-title">ACM Vice President</div>
+        <p>Leading WSU Vancouver's computing community in ICPC competitions.</p>
+        <div class="sig-meter" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="signal" style="--fill:94.8%">
+        <span class="sig-temp">94.8° — GLOWING</span>
+        <div class="sig-title">Honors, 3.8 GPA</div>
+        <p>CS + math minor — the vector math behind the models.</p>
+        <div class="sig-meter" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="signal signal-pulse">
+        <span class="sig-temp" id="pulse-temp">36.6° — ALWAYS ON</span>
+        <div class="sig-title">Currently building</div>
+        <canvas id="ekg" aria-hidden="true"></canvas>
+        <p>Shipping side projects between classes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="sec-head">
+      <h2 id="skills-h">Skills</h2>
+      <span class="readout">sensor calibration · <b>current</b></span>
+    </div>
+    <div class="skill-rows">
+      <div class="skill-row">
+        <div class="sk-cat">Machine learning</div>
+        <div class="sk-tags">
+          <span class="hotskill">PyTorch</span><span class="hotskill">CNN fine-tuning</span><span>NumPy</span><span>Feature extraction</span><span>Precision / recall evaluation</span><span>Anthropic Claude API</span><span>LLMs</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="sk-cat">Languages</div>
+        <div class="sk-tags">
+          <span class="hotskill">Python</span><span class="hotskill">C#</span><span>C++</span><span>C</span><span>TypeScript</span><span>JavaScript</span><span>Java</span><span>SQL</span><span>Rust</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="sk-cat">Cloud &amp; data</div>
+        <div class="sk-tags">
+          <span class="hotskill">Azure</span><span>Azure Data Factory</span><span>SQL Server</span><span>Cosmos DB</span><span>Blob Storage</span><span>SQLite</span><span>NoSQL</span><span>Splunk</span>
+        </div>
+      </div>
+      <div class="skill-row">
+        <div class="sk-cat">Engineering</div>
+        <div class="sk-tags">
+          <span>Docker</span><span>Linux</span><span>GitHub Actions</span><span>Octopus Deploy</span><span>CI/CD</span><span>REST APIs</span><span>GraphQL</span><span>Flask</span><span>React</span><span>Node.js</span><span>GitHub Copilot</span><span>Claude Code</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="edu-h">
+    <div class="sec-head">
+      <h2 id="edu-h">Education</h2>
+      <span class="readout">bachelor's → master's · <b>2027–2029</b></span>
+    </div>
+    <div class="edu-track">
+      <div class="edu future">
+        <h3>University of Texas at Austin</h3>
+        <span class="status" id="ut-status">ADMITTED</span>
+        <span class="when">2027 – 2029</span>
+        <p>Master of Science in Computer Science — specializing in machine learning and AI.</p>
+      </div>
+      <div class="edu">
+        <h3>Washington State University, Vancouver</h3>
+        <span class="when">MAY 2027</span>
+        <p>B.S. Computer Science, minor in Mathematics. Honors — 3.8 GPA </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="foot-inner">
+    <span class="big">Looking for warm signals?</span>
+    <div class="foot-links">
+      <a href="mailto:Krishkanda99@gmail.com">Email me</a>
+      <a href="https://github.com/KrishK21">GitHub</a>
+      <a href="http://linkedin.com/in/krish-kanda">LinkedIn</a>
+    </div>
+    <span class="foot-note">KRISH KANDA · VANCOUVER, WA</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
