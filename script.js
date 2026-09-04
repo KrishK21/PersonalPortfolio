@@ -593,4 +593,59 @@
     },{rootMargin:'-45% 0px -50% 0px'});
     map.forEach((a,el)=>io.observe(el));
   })();
+  /* ============ REST endpoint monitor (LinkedOut) ============ */
+  (function(){
+    const log = document.getElementById('apilog');
+    if (!log) return;
+    const routes = [
+      ['get','GET','/jobs','200'],
+      ['post','POST','/jobs','201'],
+      ['get','GET','/jobs/search?q=eng','200'],
+      ['del','DEL','/jobs/expired','200'],
+      ['get','GET','/jobs/42','200']
+    ];
+    // build 4 rows
+    const rows = [];
+    for (let i=0;i<4;i++){
+      const li=document.createElement('li');
+      li.innerHTML='<span class="verb"></span><span class="path"></span><span class="code"></span>';
+      log.appendChild(li);
+      rows.push(li);
+    }
+    let idx=0;
+    function fill(li, r){
+      const v=li.querySelector('.verb'), p=li.querySelector('.path'), c=li.querySelector('.code');
+      v.className='verb '+r[0]; v.textContent=r[1];
+      p.textContent=r[2];
+      c.className='code'; c.textContent='···';
+      li.classList.remove('show');
+      // reveal, then resolve the status code shortly after
+      requestAnimationFrame(()=>li.classList.add('show'));
+      setTimeout(()=>{ c.classList.add('ok'); c.textContent=r[3]; }, 420);
+    }
+    // seed
+    rows.forEach((li,i)=>{ fill(li, routes[i%routes.length]); idx=i+1; });
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let timer=null;
+    function tick(){
+      // shift rows up: move first to last, refill it
+      const first=rows.shift();
+      log.appendChild(first);
+      rows.push(first);
+      fill(first, routes[idx++ % routes.length]);
+    }
+    if ('IntersectionObserver' in window){
+      const io=new IntersectionObserver(es=>{
+        es.forEach(e=>{
+          if(e.isIntersecting && !timer){ timer=setInterval(tick, 2200); }
+          else if(!e.isIntersecting && timer){ clearInterval(timer); timer=null; }
+        });
+      },{threshold:.3});
+      io.observe(log);
+    } else {
+      timer=setInterval(tick, 2200);
+    }
+  })();
 })();
