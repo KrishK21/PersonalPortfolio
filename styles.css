@@ -269,6 +269,9 @@ section{padding:96px 0 8px;position:relative}
 .flow{display:block;width:100%;height:auto}
 .flow text{font-family:'IBM Plex Mono',monospace;font-size:10.5px;fill:var(--dim)}
 .flow text.hotlbl{fill:var(--hot)}
+.flow text.addlbl{fill:var(--heat);font-size:11px}
+.flow text.liftlbl{fill:var(--magenta);font-size:11px}
+.flow text.sublbl{font-size:8.5px;fill:var(--dim)}
 .flow rect.node{fill:var(--cold);stroke:var(--violet);stroke-width:1}
 .flow rect.corenode{stroke:var(--magenta);stroke-width:1.5}
 .flow path.wire{stroke:var(--violet);stroke-width:1.2;fill:none;opacity:.6}
