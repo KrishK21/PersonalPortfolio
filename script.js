@@ -185,7 +185,7 @@
   const demoOut = document.getElementById('demo-out');
   const matchBar = document.getElementById('matchbar');
   const matchPct = document.getElementById('matchpct');
-  const IN_TEXT = '> input: "worked on drone stuff with python"';
+  const IN_TEXT = '> input: "Job Requires: Machine Learning | Experience with PyTorch';
   const OUT_TEXT = 'Trained PyTorch models for thermal object detection on drone imagery';
   function setMatch(n){
     matchBar.style.width = n + '%';
