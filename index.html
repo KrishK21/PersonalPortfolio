@@ -80,29 +80,52 @@
         <div class="job-stack">
           <span class="key">Azure</span><span class="key">C#</span><span>SQL Server</span><span>Cosmos DB</span><span>Blob Storage</span><span>ADF</span><span>Octopus Deploy</span><span>Splunk</span>
         </div>
-        <p class="role-line">Built and led integration of <em>Azure</em> pipelines moving data from on-prem SQL Server into Blob Storage and Cosmos DB, running ADF transforms and SQL comparisons to reconcile records — the unified platform that onboarded a new European custodian. Wired CI/CD on <em>Octopus Deploy</em> and Splunk monitoring on top. Pushed into production.</p>
+        <p class="role-line">Built and led <em>Azure</em> pipelines that land on-prem files in Blob Storage, filter and extract records with SQL, then join and compare each file's restrictions against our database — adding new restrictions, removing lifted ones, skipping unchanged. The platform that onboarded a new European custodian, with CI/CD on <em>Octopus Deploy</em> and Splunk monitoring on top. Pushed into production.</p>
         <div class="viz" aria-hidden="true">
-          <span class="viz-tag">pipeline topology — live flow</span>
-          <svg class="flow" viewBox="0 0 660 170" xmlns="http://www.w3.org/2000/svg">
-            <rect class="node" x="14" y="26" width="104" height="24"/><text x="24" y="42">SQL SERVER</text>
-            <rect class="node" x="14" y="60" width="104" height="24"/><text x="24" y="76">BLOB STORAGE</text>
-            <rect class="node" x="14" y="94" width="104" height="24"/><text x="24" y="110">COSMOS DB</text>
-            <rect class="node" x="14" y="128" width="104" height="24"/><text x="24" y="144">REST APIS</text>
-            <path class="wire" d="M118 38 C 190 38, 200 85, 268 85"/>
-            <path class="wire" d="M118 72 C 180 72, 200 85, 268 85"/>
-            <path class="wire" d="M118 106 C 180 106, 200 85, 268 85"/>
-            <path class="wire" d="M118 140 C 190 140, 200 85, 268 85"/>
-            <path class="pulse"    d="M118 38 C 190 38, 200 85, 268 85"/>
-            <path class="pulse p2" d="M118 72 C 180 72, 200 85, 268 85"/>
-            <path class="pulse p3" d="M118 106 C 180 106, 200 85, 268 85"/>
-            <path class="pulse p4" d="M118 140 C 190 140, 200 85, 268 85"/>
-            <rect class="node corenode" x="268" y="66" width="140" height="38"/>
-            <text class="hotlbl" x="285" y="89">AZURE PLATFORM</text>
-            <path class="wire" d="M408 85 L 512 85"/>
-            <path class="pulse pout" d="M408 85 L 512 85"/>
-            <rect class="node" x="512" y="66" width="134" height="38"/>
-            <text x="524" y="83">EU CUSTODIAN</text>
-            <text x="524" y="97">ONBOARDED ✓</text>
+          <span class="viz-tag">restriction pipeline — reconciliation flow</span>
+          <svg class="flow" viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- stage 1: on-prem files -->
+            <rect class="node" x="8" y="78" width="96" height="44"/>
+            <text x="20" y="96">ON-PREM</text><text x="20" y="110">FILES</text>
+            <!-- stage 2: blob -->
+            <rect class="node" x="146" y="78" width="96" height="44"/>
+            <text x="158" y="96">BLOB</text><text x="158" y="110">STORAGE</text>
+            <!-- stage 3: filter + sql -->
+            <rect class="node" x="284" y="78" width="104" height="44"/>
+            <text x="296" y="96">FILTER +</text><text x="296" y="110">SQL EXTRACT</text>
+            <!-- stage 4: join & compare (core) -->
+            <rect class="node corenode" x="430" y="72" width="120" height="56"/>
+            <text class="hotlbl" x="444" y="94">JOIN &amp;</text>
+            <text class="hotlbl" x="444" y="110">COMPARE</text>
+            <!-- reference DB feeding the compare from below -->
+            <rect class="node" x="430" y="150" width="120" height="34"/>
+            <text x="444" y="171">RESTRICTION DB</text>
+
+            <!-- main horizontal wires -->
+            <path class="wire" d="M104 100 L 146 100"/>
+            <path class="wire" d="M242 100 L 284 100"/>
+            <path class="wire" d="M388 100 L 430 100"/>
+            <path class="wire" d="M490 150 L 490 128"/>
+            <path class="pulse"    d="M104 100 L 146 100"/>
+            <path class="pulse p2" d="M242 100 L 284 100"/>
+            <path class="pulse p3" d="M388 100 L 430 100"/>
+            <path class="pulse p4" d="M490 150 L 490 128"/>
+
+            <!-- three outcome branches -->
+            <path class="wire" d="M550 92 C 600 92, 596 40, 636 40"/>
+            <path class="wire" d="M550 100 L 636 100"/>
+            <path class="wire" d="M550 108 C 600 108, 596 160, 636 160"/>
+            <path class="pulse pout" d="M550 92 C 600 92, 596 40, 636 40"/>
+            <path class="pulse pout p2" d="M550 100 L 636 100"/>
+            <path class="pulse pout p4" d="M550 108 C 600 108, 596 160, 636 160"/>
+
+            <!-- outcome labels -->
+            <text class="addlbl" x="636" y="34">+ ADDED</text>
+            <text x="636" y="46" class="sublbl">new restriction</text>
+            <text x="636" y="98">= UNCHANGED</text>
+            <text x="636" y="110" class="sublbl">no diff, skip</text>
+            <text class="liftlbl" x="636" y="158">− LIFTED</text>
+            <text x="636" y="170" class="sublbl">removed from DB</text>
           </svg>
         </div>
       </article>
