@@ -68,37 +68,6 @@ Inactive overlays are inert. Dialogs support Escape, focus containment, and focu
 
 The 3D bundle loads separately. Rendering is on demand, with no idle render loop. Repeated keys and convergence objects are instanced. Offstage scenes are hidden. Mobile uses a lower pixel ratio, fewer objects, no shadow map, and its own camera composition. Fonts and 3D text data are hosted locally.
 
-## Checks
-
-```sh
-npm run typecheck
-npm test
-npm run build
-```
-
-The camera tests cover chapter readability, all project stops, continuous forward travel on both device paths, keyframe boundaries, and deterministic reverse scrolling.
-
-## Hosting
-
-Deploy the contents of `out/` to a static web host. For Vercel or a root/custom domain, use `npm run build` and the default empty base path.
-
-For GitHub Pages at `https://krishk21.github.io/PersonalPortfolio/`, build with the repository prefix:
-
-```sh
-NEXT_PUBLIC_BASE_PATH=/PersonalPortfolio npm run build
-```
-
-In PowerShell:
-
-```powershell
-$env:NEXT_PUBLIC_BASE_PATH = "/PersonalPortfolio"
-npm run build
-```
-
-Deploy the resulting `out/` directory using GitHub Pages Actions. The old approach of publishing the raw repository root is no longer appropriate because this is now a compiled Next.js project. Create an empty `.nojekyll` file if publishing the output from a branch.
-
-The included prebuilt output uses the root path. Rebuild with the prefix before deploying to a repository subpath. This redesign has not been pushed to GitHub or published automatically.
-
 ## Asset credits
 
 DM Sans and IBM Plex Mono are packaged through Fontsource under their respective Open Font Licenses. Helvetiker Bold comes from the Three.js examples. Its license is embedded in `src/lib/helvetiker-bold.json` and included at `public/fonts/HELVETIKER-LICENSE.txt`. All scene objects and interface illustrations are created in code.
