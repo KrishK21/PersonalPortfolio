@@ -1,46 +1,4 @@
-# Krish Kanda · Ideas into impact
-
-An immersive redesign of the original PersonalPortfolio repository. The attached creative direction is adapted to Krish's existing experience and projects.
-
-## Run it
-
-Use Node.js 20.9 or later. Node.js 22 or 24 is recommended.
-
-```sh
-npm ci
-npm run dev
-```
-
-Open http://localhost:3000.
-
-## Preview the finished build
-
-The download includes the ready-to-host `out/` directory. To preview it, no dependency installation is needed:
-
-```sh
-node scripts/preview.mjs
-```
-
-Open http://localhost:3000. Serve the site over HTTP. Opening `out/index.html` directly as a local file does not resolve Next.js assets correctly.
-
-After editing the source, regenerate the output:
-
-```sh
-npm run build
-npm run preview
-```
-
 ## The experience
-
-1. Studio: a quiet white room, a sculptural desk, and an opening laptop.
-2. Portal: the camera enters the laptop screen.
-3. Experience: Fisher Investments and Interject are visible together, with a dedicated full-experience dialog.
-4. Projects: AI Resume Tailor, LinkedOut, and the winning WealthPilot project.
-5. About: Computer Science, Mathematics, education, and ACM leadership.
-6. Contact: a direct invitation to get in touch.
-
-The homepage has a primary View experience button. Experience also has a permanent navigation link on desktop and mobile and appears before projects in the Index and simple view. The palette uses white, charcoal, and blue, with stronger text and navigation contrast.
-
 Scrolling controls one continuous, reversible camera journey. Chapter navigation and project controls jump to readable stops. The Index opens the complete portfolio in a keyboard-accessible dialog.
 
 ## Stack and structure
